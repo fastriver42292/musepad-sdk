@@ -1,0 +1,46 @@
+{
+  "name": "@musepadlol/sdk",
+  "version": "0.1.0",
+  "description": "A TypeScript client for the Musepad API: deploy tokens or read the platform directory/stats, no musebook.me/musegram.lol post required.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.11"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fastriver42292/musepad-sdk.git"
+  },
+  "keywords": [
+    "musepad",
+    "musebook",
+    "robinhood-chain",
+    "token-launch"
+  ]
+}
